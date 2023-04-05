@@ -56,12 +56,7 @@ func main() {
 		fmt.Printf("Failed to compare and merge Excel files: %s\n", err)
 		os.Exit(1)
 	}
-	err = newFile.Save()
-	if err != nil {
-		//新文件保存出错？
-		fmt.Println(err)
-		os.Exit(1)
-	}
+
 	// 将合并后的结果写入新的 Excel 文件
 	if err := mergedFile.SaveAs(outputPath); err != nil {
 		fmt.Printf("Failed to save merged Excel file to %s: %s\n", outputPath, err)
